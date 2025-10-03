@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VanillaPsycastsExpanded.PsycasterPathDef>
+    <defName>VPE_AnimaSTNL</defName>
+    <label>Animancer</label>
+    <description>Manifest the power of the anima tree.</description>
+    <altBackground>UI_Anima/Tree/Animatreebase</altBackground>
+    <tab>Misc</tab>
+    <tooltip>Manifest the power of the anima tree.</tooltip>
+  </VanillaPsycastsExpanded.PsycasterPathDef>
+</Defs>
