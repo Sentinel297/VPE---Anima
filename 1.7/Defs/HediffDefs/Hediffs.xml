@@ -1,0 +1,222 @@
+<Defs>
+
+<HediffDef>
+      <defName>AnimaAttunedSTNL</defName>
+      <label>Anima Attunement</label>
+	  <defaultLabelColor>(1.0, 1, 1)</defaultLabelColor>
+      <description>This person is attuned to an Anima tree.</description>
+      <descriptionShort>This pawn is attuned to an Anima tree.</descriptionShort>
+      <isBad>false</isBad>
+      <stages>
+        <li>
+<statOffsets>
+<PsychicSensitivity>0.25</PsychicSensitivity>
+</statOffsets>
+        </li>
+      </stages>
+    </HediffDef>
+	
+	<HediffDef>
+      <defName>AnimaMindSTNL</defName>
+      <label>Anima-Mind</label>
+	  <defaultLabelColor>(1.0, 1, 1)</defaultLabelColor>
+      <description>This person has linked their mind to an Anima tree, giving them enhanced consciousness and psychic sensitivity.</description>
+      <descriptionShort>This person has linked their mind to an Anima tree, giving them enhanced consciousness and psychic sensitivity.</descriptionShort>
+      <isBad>false</isBad>
+      <stages>
+        <li>
+<statOffsets>
+<PsychicSensitivity>0.25</PsychicSensitivity>
+</statOffsets>
+<capMods>
+<li>
+<capacity>Consciousness</capacity>
+<offset>0.10</offset>
+</li>
+</capMods>
+        </li>
+      </stages>
+    </HediffDef>
+	
+	<HediffDef>
+<defName>AnimareapedSTNL</defName>
+<label>Mind reaped</label>
+<description>This creature's energy has been absorbed by an Animancer.</description>
+<defaultLabelColor>(1, 0, 0)</defaultLabelColor>
+<lethalSeverity>0.5</lethalSeverity>
+<canApplyDodChanceForCapacityChanges>true</canApplyDodChanceForCapacityChanges>
+<makesSickThought>true</makesSickThought>
+<scenarioCanAdd>false</scenarioCanAdd>
+<isBad>false</isBad>
+<everCurableByItem>false</everCurableByItem>
+</HediffDef>
+
+
+<HediffDef>
+<defName>AnimareaperSTNL</defName>
+<label>Second-Mind</label>
+<description>This Animancer has absorbed energy from a creature.</description>
+<defaultLabelColor>(1, 0, 0)</defaultLabelColor>
+<canApplyDodChanceForCapacityChanges>true</canApplyDodChanceForCapacityChanges>
+<makesSickThought>false</makesSickThought>
+<scenarioCanAdd>false</scenarioCanAdd>
+<isBad>false</isBad>
+<everCurableByItem>false</everCurableByItem>
+<stages>
+        <li>
+<statOffsets>
+<PsychicSensitivity>0.25</PsychicSensitivity>
+</statOffsets>
+        </li>
+      </stages>	
+</HediffDef>
+	
+<ThingDef ParentName="MakeableDrugBase">
+<defName>AnimaMoteSTNL</defName>
+<label>Anima Mote</label>
+<description>The product of a psycaster manifesting their psychic energy into a mote, can be used to restore psyfocus.</description>
+<graphicData>
+<texPath>Things/Item/animamoteSTNL</texPath>
+<graphicClass>Graphic_StackCount</graphicClass>
+</graphicData>
+<rotatable>false</rotatable>
+<statBases>
+<MarketValue>53</MarketValue>
+<Mass>0.01</Mass>
+</statBases>
+<techLevel>Industrial</techLevel>
+<ingestible>
+<foodType>Processed, Fluid</foodType>
+<baseIngestTicks>80</baseIngestTicks>
+<ingestSound>Ingest_Inject</ingestSound>
+<ingestHoldOffsetStanding>
+<northDefault>
+<offset>(0.18,0,0)</offset>
+</northDefault>
+</ingestHoldOffsetStanding>
+<ingestCommandString>Consume {0}</ingestCommandString>
+<ingestReportString>Consuming {0}.</ingestReportString>
+<useEatingSpeedStat>false</useEatingSpeedStat>
+<chairSearchRadius>0</chairSearchRadius>
+<outcomeDoers>
+<li Class="IngestionOutcomeDoer_OffsetPsyfocus">
+<offset>0.25</offset>
+</li>
+</outcomeDoers>
+</ingestible>
+<recipeMaker>
+<recipeUsers>
+</recipeUsers>
+<soundWorking>Recipe_Drug</soundWorking>
+<displayPriority>1500</displayPriority>
+</recipeMaker>
+<costList>
+<Luciferium>1</Luciferium>
+</costList>
+<tradeability>None</tradeability>
+<tickerType>Normal</tickerType>
+</ThingDef>
+
+	
+<ThingDef ParentName="MakeableDrugBase">
+<defName>AnimaWispSTNL</defName>
+<label>Anima Wisp</label>
+<description>The product of a psycaster manifesting their psychic energy into a wisp, can be used to restore psyfocus.</description>
+<graphicData>
+<texPath>Things/Item/animawispSTNL</texPath>
+<graphicClass>Graphic_StackCount</graphicClass>
+</graphicData>
+<rotatable>false</rotatable>
+<statBases>
+<MarketValue>53</MarketValue>
+<Mass>0.01</Mass>
+</statBases>
+<techLevel>Industrial</techLevel>
+<ingestible>
+<joyKind>Chemical</joyKind>
+<joy>0.0000001</joy>
+<foodType>Processed, Fluid</foodType>
+<baseIngestTicks>80</baseIngestTicks>
+<ingestSound>Ingest_Inject</ingestSound>
+<ingestHoldOffsetStanding>
+<northDefault>
+<offset>(0.18,0,0)</offset>
+</northDefault>
+</ingestHoldOffsetStanding>
+<ingestCommandString>Consume {0}</ingestCommandString>
+<ingestReportString>Consuming {0}.</ingestReportString>
+<useEatingSpeedStat>false</useEatingSpeedStat>
+<chairSearchRadius>0</chairSearchRadius>
+<outcomeDoers>
+<li Class="IngestionOutcomeDoer_OffsetPsyfocus">
+<offset>1</offset>
+</li>
+</outcomeDoers>
+</ingestible>
+<recipeMaker>
+<recipeUsers>
+</recipeUsers>
+<soundWorking>Recipe_Drug</soundWorking>
+<displayPriority>1500</displayPriority>
+</recipeMaker>
+<costList>
+<Luciferium>1</Luciferium>
+</costList>
+<tradeability>None</tradeability>
+<tickerType>Normal</tickerType>
+</ThingDef>
+
+<ThingDef MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
+<defName>PsychicAmplifierAnimaSTNL</defName>
+<label>Anima-Link Neuroformer</label>
+<description>A consumable archotech-created device that forms or upgrades a psylink in the user's mind.\n\nThe user presses the device over the eyes, where it links to the brain directly and restructures part of it. Afterwards, the device disintegrates into worthless ash.</description>
+<descriptionHyperlinks>
+<HediffDef>PsychicAmplifier</HediffDef>
+</descriptionHyperlinks>
+<thingClass>ThingWithComps</thingClass>
+<category>Item</category>
+<drawerType>MapMeshOnly</drawerType>
+<techLevel>Archotech</techLevel>
+<useHitPoints>true</useHitPoints>
+<pathCost>14</pathCost>
+<selectable>true</selectable>
+<altitudeLayer>Item</altitudeLayer>
+<tickerType>Never</tickerType>
+<alwaysHaulable>true</alwaysHaulable>
+<resourceReadoutPriority>Middle</resourceReadoutPriority>
+<thingCategories>
+<li>BodyPartsArchotech</li>
+</thingCategories>
+<statBases>
+<MaxHitPoints>100</MaxHitPoints>
+<Beauty>-4</Beauty>
+<Mass>1</Mass>
+<MarketValue>2600</MarketValue>
+<DeteriorationRate>0</DeteriorationRate>
+</statBases>
+<graphicData>
+<texPath>Things/Item/animalinkSTNL/animalinkSTNL</texPath>
+<graphicClass>Graphic_Single</graphicClass>
+</graphicData>
+<tradeability>None</tradeability>
+<comps>
+<li Class="CompProperties_Usable">
+<compClass>CompUsableImplant</compClass>
+<useJob>UseItem</useJob>
+<useLabel>Use neuroformer to form psylink</useLabel>
+<showUseGizmo>true</showUseGizmo>
+</li>
+<li Class="CompProperties_UseEffectInstallImplant">
+<hediffDef>PsychicAmplifier</hediffDef>
+<bodyPart>Brain</bodyPart>
+<canUpgrade>true</canUpgrade>
+</li>
+<li Class="CompProperties_UseEffectPlaySound">
+<soundOnUsed>PsyAmpInstalled</soundOnUsed>
+</li>
+<li Class="CompProperties_UseEffectDestroySelf"/>
+<li Class="CompProperties_Forbiddable"/>
+</comps>
+</ThingDef>
+	
+</Defs>

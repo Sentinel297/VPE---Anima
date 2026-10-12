@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_AnimattuneSTNL</defName>
+		<label>Anima Attunement</label>
+		<description>Attune your mind to the Anima tree, raising your psychic sensitivity.</description>
+		<iconPath>UI_Anima/Abilities/Attune</iconPath>
+		<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+		<goodwillImpact>-100</goodwillImpact>
+		<targetMode>Self</targetMode>
+		<castTime>30</castTime>
+    	<range>12.9</range>
+		<targetingParameters>
+			<canTargetLocations>False</canTargetLocations>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetPawns>True</canTargetPawns>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>false</canTargetMechs>
+		</targetingParameters>
+		<castSound>PsychicShockLanceCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_AnimaSTNL</path>
+				<level>1</level>
+				<order>1</order>
+				<psyfocusCost>0.3</psyfocusCost>
+				<entropyGain>35</entropyGain>
+			</li>
+			<li Class="VEF.Abilities.AbilityExtension_Hediff">
+				<hediff>AnimaAttunedSTNL</hediff>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+<defName>VPE_AnimameditateSTNL</defName>
+<label>Animeditation</label>
+<description>Concentrate on your connection to the Anima tree, allowing you to restore your psyfocus and gain experience towards your next Psy-level.</description>
+<iconPath>UI_Anima/Abilities/Meditate</iconPath>
+<abilityClass>VanillaPsycastsExpanded.Chronopath.Ability_Meditate</abilityClass>
+<targetMode>Self</targetMode>
+<castTime>600</castTime>
+<castSound>VPE_TimeskipMeditation_Cast</castSound>
+<cooldownTime>180000</cooldownTime>
+<showUndrafted>true</showUndrafted>
+<modExtensions>
+<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+<path>VPE_AnimaSTNL</path>
+<level>2</level>
+<order>2</order>
+<psyfocusCost>0</psyfocusCost>
+<entropyGain>0</entropyGain>
+<prerequisites>
+<li>VPE_AnimattuneSTNL</li>
+</prerequisites>
+</li>
+</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+<defName>VPE_SummonmoteSTNL</defName>
+<label>Anima Mote</label>
+<description>Psychically manifest a mote of Anima energy, allowing any psycaster to convert it to 25% psyfocus.</description>
+<iconPath>Things/Item/animamoteSTNL/animamoteSTNL</iconPath>
+<castTime>500</castTime>
+<range>6.9</range>
+<targetMode>Location</targetMode>
+<abilityClass>VEF.Abilities.Ability_Spawn</abilityClass>
+<needsTicking>true</needsTicking>
+<chance>0</chance>
+<modExtensions>
+<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+<path>VPE_AnimaSTNL</path>
+<level>3</level>
+<order>2</order>
+<psyfocusCost>0.25</psyfocusCost>
+<entropyGain>45</entropyGain>
+<prerequisites>
+<li>VPE_AnimameditateSTNL</li>
+</prerequisites>
+</li>
+<li Class="VEF.Abilities.AbilityExtension_Spawn">
+<thing>AnimaMoteSTNL</thing>
+</li>
+<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+<effecterDef>Skip_ExitNoDelay</effecterDef>
+<maintainForTicks>600</maintainForTicks>
+<scale>1</scale>
+</li>
+</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+	
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_AnimaMindSTNL</defName>
+		<label>Anima Mind</label>
+		<description>Link yourself to a distant greater Anima tree, causing it to raise your consciousness and psychic sensitivity.</description>
+		<iconPath>UI_Anima/Abilities/Mind</iconPath>
+		<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+		<goodwillImpact>-100</goodwillImpact>
+		<targetMode>Self</targetMode>
+		<castTime>30</castTime>
+    	<range>12.9</range>
+		<targetingParameters>
+			<canTargetLocations>False</canTargetLocations>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetPawns>True</canTargetPawns>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>false</canTargetMechs>
+		</targetingParameters>
+		<castSound>PsychicShockLanceCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_AnimaSTNL</path>
+				<level>4</level>
+				<order>1</order>
+				<psyfocusCost>0.3</psyfocusCost>
+				<entropyGain>35</entropyGain>
+				<prerequisites>
+<li>VPE_SummonmoteSTNL</li>
+</prerequisites>
+			</li>
+			<li Class="VEF.Abilities.AbilityExtension_Hediff">
+				<hediff>AnimaMindSTNL</hediff>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+<defName>VPE_AnimaVertigoSTNL</defName>
+<label>Anima Vertigo</label>
+<description>Generate an overwhelming feeling of vertigo in everyone near the target point. Considered an overt act of aggression.</description>
+<iconPath>UI_Anima/Abilities/Vertigo</iconPath>
+<abilityClass>VanillaPsycastsExpanded.Ability_BerserkPulse</abilityClass>
+<castTime>60</castTime>
+<durationTime>1200</durationTime>
+<range>20</range>
+<radius>5.5</radius>
+<targetMode>Location</targetMode>
+<hasAoE>true</hasAoE>
+<targetingParametersForAoE>
+<canTargetSelf>True</canTargetSelf>
+<canTargetHumans>True</canTargetHumans>
+<canTargetMechs>False</canTargetMechs>
+<canTargetAnimals>True</canTargetAnimals>
+<neverTargetIncapacitated>False</neverTargetIncapacitated>
+</targetingParametersForAoE>
+<goodwillImpact>-75</goodwillImpact>
+<modExtensions>
+<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+<path>VPE_AnimaSTNL</path>
+<level>5</level>
+<order>2</order>
+<psyfocusCost>0.06</psyfocusCost>
+<entropyGain>65</entropyGain>
+<psychic>true</psychic>
+<prerequisites>
+<li>VPE_AnimaMindSTNL</li>
+</prerequisites>
+</li>
+<li Class="VEF.Abilities.AbilityExtension_Hediff">
+				<hediff>PsychicVertigo</hediff>
+			</li>
+</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+<defName>VPE_SummonWispSTNL</defName>
+<label>Anima Wisp</label>
+<description>Psychically manifest a wisp of Anima energy, allowing any psycaster to convert it to 100% psyfocus.</description>
+<iconPath>Things/Item/animawispSTNL/animawispSTNL</iconPath>
+<castTime>500</castTime>
+<durationTime>300000</durationTime>
+<range>6.9</range>
+<targetMode>Location</targetMode>
+<abilityClass>VEF.Abilities.Ability_Spawn</abilityClass>
+<needsTicking>true</needsTicking>
+<chance>0</chance>
+<modExtensions>
+<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+<path>VPE_AnimaSTNL</path>
+<level>5</level>
+<order>2</order>
+<psyfocusCost>0.99</psyfocusCost>
+<entropyGain>45</entropyGain>
+<prerequisites>
+<li>VPE_AnimaMindSTNL</li>
+</prerequisites>
+</li>
+<li Class="VEF.Abilities.AbilityExtension_Spawn">
+<thing>AnimaWispSTNL</thing>
+</li>
+<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+<effecterDef>Skip_ExitNoDelay</effecterDef>
+<maintainForTicks>600</maintainForTicks>
+<scale>1</scale>
+</li>
+</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+<defName>VPE_SummonpsylinkSTNL</defName>
+<label>Anima-Link</label>
+<description>Psychically manifest an Anima-Link, allowing another person to develop psychic powers. Or to be used by a psycaster to raise their level.</description>
+<iconPath>Things/Item/animalinkSTNL/animalinkSTNL</iconPath>
+<castTime>500</castTime>
+<range>6.9</range>
+<targetMode>Location</targetMode>
+<abilityClass>VEF.Abilities.Ability_Spawn</abilityClass>
+<needsTicking>true</needsTicking>
+<chance>0</chance>
+<modExtensions>
+<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+<path>VPE_AnimaSTNL</path>
+<level>6</level>
+<order>2</order>
+<psyfocusCost>0.75</psyfocusCost>
+<entropyGain>500</entropyGain>
+<prerequisites>
+<li>VPE_SummonWispSTNL</li>
+<li>VPE_AnimaVertigoSTNL</li>
+</prerequisites>
+</li>
+<li Class="VEF.Abilities.AbilityExtension_Spawn">
+<thing>PsychicAmplifierAnimaSTNL</thing>
+</li>
+<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+<effecterDef>Skip_ExitNoDelay</effecterDef>
+<maintainForTicks>600</maintainForTicks>
+<scale>1</scale>
+</li>
+</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>VPE_AnimaReapSTNL</defName>
+    <label>Anima Reap</label>
+    <description>Rip the energy out of the target, using it to strengthen your connection to the Greater Anima tree.</description>
+    <iconPath>UI_Anima/Abilities/Reap</iconPath>
+    <castTime>120</castTime>
+    <targetMode>Pawn</targetMode>
+    <range>14</range>
+	<needsTicking>true</needsTicking>
+    <goodwillImpact>-100</goodwillImpact>
+<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+    <castSound>DeathAcidifier</castSound>
+	<targetingParameters>
+			<canTargetLocations>False</canTargetLocations>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetPawns>True</canTargetPawns>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+		</targetingParameters>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>VPE_AnimaSTNL</path>
+        <level>6</level>
+        <order>1</order>
+        <psyfocusCost>0.75</psyfocusCost>
+        <entropyGain>75</entropyGain>
+		<prerequisites>
+<li>VPE_SummonWispSTNL</li>
+<li>VPE_AnimaVertigoSTNL</li>
+</prerequisites>
+      </li>
+<li Class="VEF.Abilities.AbilityExtension_ExtraHediffs">
+<onCaster>
+<li>AnimareaperSTNL</li>
+</onCaster>
+<onTarget>
+<li>AnimareapedSTNL</li>
+</onTarget>
+</li>
+	  <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+<effecterDef>Skip_ExitNoDelay</effecterDef>
+<maintainForTicks>30</maintainForTicks>
+<scale>2</scale>
+</li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+  
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+<defName>VPE_AnimaBansheeSTNL</defName>
+<label>Anima Banshee</label>
+<description>Generate an overwhelming rush of fear in everyone near the target point. Considered an overt act of aggression.</description>
+<iconPath>UI_Anima/Abilities/Banshee</iconPath>
+<abilityClass>VanillaPsycastsExpanded.Ability_BerserkPulse</abilityClass>
+<castTime>60</castTime>
+<durationTime>1500</durationTime>
+<range>20</range>
+<radius>5.5</radius>
+<targetMode>Location</targetMode>
+<hasAoE>true</hasAoE>
+<targetingParametersForAoE>
+<canTargetSelf>True</canTargetSelf>
+<canTargetHumans>True</canTargetHumans>
+<canTargetMechs>True</canTargetMechs>
+<canTargetAnimals>True</canTargetAnimals>
+<neverTargetIncapacitated>True</neverTargetIncapacitated>
+</targetingParametersForAoE>
+<goodwillImpact>-75</goodwillImpact>
+<modExtensions>
+<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+<path>VPE_AnimaSTNL</path>
+<level>6</level>
+<order>3</order>
+<psyfocusCost>0.49</psyfocusCost>
+<entropyGain>65</entropyGain>
+<psychic>true</psychic>
+<prerequisites>
+<li>VPE_SummonWispSTNL</li>
+<li>VPE_AnimaVertigoSTNL</li>
+</prerequisites>
+</li>
+<li Class="VanillaPsycastsExpanded.AbilityExtension_GiveMentalState">
+<stateDef>PanicFlee</stateDef>
+<durationMultiplier>PsychicSensitivity</durationMultiplier>
+</li>
+</modExtensions>
+</VEF.Abilities.AbilityDef>
+  
+</Defs>
