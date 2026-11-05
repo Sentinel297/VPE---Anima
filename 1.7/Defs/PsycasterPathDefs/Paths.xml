@@ -3,9 +3,9 @@
     <VanillaPsycastsExpanded.PsycasterPathDef>
     <defName>VPE_AnimaSTNL</defName>
     <label>Animancer</label>
-    <description>Manifest the power of the anima tree.</description>
+    <description>Animancers draw power from the ambient anima energy in the world, they possess the ability to produce motes and wisps of psychic energy to stockpile psyfocus for later use. They also are capable of producing their own form of psylinks to create new psycasters or empower existing ones.</description>
     <altBackground>UI_Anima/Tree/Animatreebase</altBackground>
     <tab>Misc</tab>
-    <tooltip>Manifest the power of the anima tree.</tooltip>
+    <tooltip>Animancers draw power from the ambient anima energy in the world, they possess the ability to produce motes and wisps of psychic energy to stockpile psyfocus for later use. They also are capable of producing their own form of psylinks to create new psycasters or empower existing ones.</tooltip>
   </VanillaPsycastsExpanded.PsycasterPathDef>
 </Defs>
