@@ -25,7 +25,7 @@
 		<description>This creature's mind is attuned to the ambient flow of anima energy, having anima grass in the region will drastically increase its psychic sensitivity.</description>
 		<hediffClass>VPE_Anima.Hediff_Animind</hediffClass>
 		<isBad>false</isBad>
-		<makesSickThought>true</makesSickThought>
+		<makesSickThought>false</makesSickThought>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<isBad>false</isBad>
 		<everCurableByItem>false</everCurableByItem>
